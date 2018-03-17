@@ -1,28 +1,30 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using Lab8AuthenticationProgram.Data;
 using Lab8AuthenticationProgram.Data.Entities;
 using Lab8AuthenticationProgram.Models;
+using Microsoft.AspNet.Identity;
 
 namespace Lab8AuthenticationProgram.Controllers
 {
     public class TodoController : Controller
     {
-        public ActionResult List(int userId)
+        [Authorize]
+        public ActionResult List()
         {
-            ViewBag.UserId = userId;
-
+            var userId = User.Identity.GetUserId();
+            ViewBag.UserId = User.Identity.GetUserId();
             var Todos = GetTodosForUser(userId);
 
             return View(Todos);
         }
 
         [HttpGet]
-        public ActionResult Create(int userId)
+        public ActionResult Create()
         {
-            ViewBag.UserId = userId;
-
+            ViewBag.UserId = User.Identity.GetUserId();
             return View();
         }
 
@@ -34,7 +36,6 @@ namespace Lab8AuthenticationProgram.Controllers
                 Save(newTodoViewModel);
                 return RedirectToAction("List", new {userId = newTodoViewModel.UserId});
             }
-
             return View();
         }
 
@@ -81,7 +82,7 @@ namespace Lab8AuthenticationProgram.Controllers
             return dbContext.UserTodo.Find(TodoId);
         }
 
-        private ICollection<TodoViewModel> GetTodosForUser(int userId)
+        private ICollection<TodoViewModel> GetTodosForUser(String userId)
         {
             var TodoViewModels = new List<TodoViewModel>();
 

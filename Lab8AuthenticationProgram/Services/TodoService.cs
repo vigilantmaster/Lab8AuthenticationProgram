@@ -21,15 +21,15 @@ namespace Lab8AuthenticationProgram.Services
             return MapToTodoViewModel(todo);
         }
 
-        public IEnumerable<TodoViewModel> GetTodosForUser(int userId)
+        public IEnumerable<TodoViewModel> GetTodosForUser(String userId)
         {
-            var petViewModels = new List<TodoViewModel>();
+            var TodoViewModel = new List<TodoViewModel>();
 
             var users = _repository.GetTodosForUser(userId);
 
-            foreach (var todo in users) petViewModels.Add(todo);
+            foreach (var todo in users) TodoViewModel.Add(todo);
 
-            return petViewModels;
+            return TodoViewModel;
         }
 
         public void SaveTodo(TodoViewModel todoViewModel)

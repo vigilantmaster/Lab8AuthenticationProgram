@@ -16,7 +16,7 @@ namespace Lab8AuthenticationProgram.Repositories
             return dbContext.UserTodo.Find(TodoId);
         }
 
-        public ICollection<TodoViewModel> GetTodosForUser(int userId)
+        public ICollection<TodoViewModel> GetTodosForUser(String userId)
         {
             var TodoViewModels = new List<TodoViewModel>();
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Lab8AuthenticationProgram.Models;
 
 namespace Lab8AuthenticationProgram.Services
@@ -7,7 +8,7 @@ namespace Lab8AuthenticationProgram.Services
     {
         TodoViewModel GetTodo(int id);
 
-        IEnumerable<TodoViewModel> GetTodosForUser(int userId);
+        IEnumerable<TodoViewModel> GetTodosForUser(String userId);
 
         void SaveTodo(TodoViewModel todo);
 

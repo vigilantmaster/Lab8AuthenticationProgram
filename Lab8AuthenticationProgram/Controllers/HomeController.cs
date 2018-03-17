@@ -2,11 +2,12 @@
 
 namespace Lab8AuthenticationProgram.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         public ActionResult Index()
         {
-            return View();
+            return RedirectToAction("List", "Todo");
         }
 
         public ActionResult About()

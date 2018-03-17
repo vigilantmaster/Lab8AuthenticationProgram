@@ -19,6 +19,6 @@ namespace Lab8AuthenticationProgram.Data.Entities
         [Display(Name = "Finished")]
         public bool Finished { get; set; }
 
-        public int UserId { get; set; }
+        public String UserId { get; set; }
     }
 }

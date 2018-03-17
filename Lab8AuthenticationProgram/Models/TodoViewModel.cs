@@ -19,7 +19,7 @@ namespace Lab8AuthenticationProgram.Models
         [Display(Name = "Finished")]
         public bool Finished { get; set; }
 
-        public int UserId { get; set; }
+        public String UserId { get; set; }
 
         [Display(Name = "Reminder Alert")] public bool ReminderAlert { get; set; }
     }
