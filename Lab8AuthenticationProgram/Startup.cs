@@ -1,7 +1,9 @@
-﻿using Microsoft.Owin;
+﻿using Lab8AuthenticationProgram;
+using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(Lab8AuthenticationProgram.Startup))]
+[assembly: OwinStartup(typeof(Startup))]
+
 namespace Lab8AuthenticationProgram
 {
     public partial class Startup

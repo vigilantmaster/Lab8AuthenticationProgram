@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using Lab8AuthenticationProgram.Data.Entities;
-
 using Lab8AuthenticationProgram.Models;
 
 namespace Lab8AuthenticationProgram.Repositories

@@ -1,9 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using Lab8AuthenticationProgram.Data.Entities;
-
 using Lab8AuthenticationProgram.Models;
 using Lab8AuthenticationProgram.Repositories;
 
@@ -30,17 +27,13 @@ namespace Lab8AuthenticationProgram.Services
 
             var users = _repository.GetTodosForUser(userId);
 
-            foreach (var todo in users)
-            {
-                petViewModels.Add(todo);
-            }
+            foreach (var todo in users) petViewModels.Add(todo);
 
             return petViewModels;
         }
 
         public void SaveTodo(TodoViewModel todoViewModel)
         {
-            
             var todo = MapToTodo(todoViewModel);
 
             _repository.SaveTodo(todo);

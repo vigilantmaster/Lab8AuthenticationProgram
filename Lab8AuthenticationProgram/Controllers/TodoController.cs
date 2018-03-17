@@ -3,7 +3,6 @@ using System.Linq;
 using System.Web.Mvc;
 using Lab8AuthenticationProgram.Data;
 using Lab8AuthenticationProgram.Data.Entities;
-
 using Lab8AuthenticationProgram.Models;
 
 namespace Lab8AuthenticationProgram.Controllers
@@ -33,7 +32,7 @@ namespace Lab8AuthenticationProgram.Controllers
             if (ModelState.IsValid)
             {
                 Save(newTodoViewModel);
-                return RedirectToAction("List", new { userId = newTodoViewModel.UserId });
+                return RedirectToAction("List", new {userId = newTodoViewModel.UserId});
             }
 
             return View();
@@ -60,7 +59,7 @@ namespace Lab8AuthenticationProgram.Controllers
             {
                 UpdateTodo(newTodoViewModel);
 
-                return RedirectToAction("List", new { userId = newTodoViewModel.UserId });
+                return RedirectToAction("List", new {userId = newTodoViewModel.UserId});
             }
 
             return View();
@@ -72,7 +71,7 @@ namespace Lab8AuthenticationProgram.Controllers
 
             DeleteTodo(id);
 
-            return RedirectToAction("List", new { UserId = Todo.UserId });
+            return RedirectToAction("List", new {Todo.UserId});
         }
 
         private Todo GetTodo(int TodoId)
@@ -156,12 +155,13 @@ namespace Lab8AuthenticationProgram.Controllers
                 UserId = mappedTodo.UserId
             };
         }
+
         private void CopyToTodo(TodoViewModel todoViewModel, Todo todo)
         {
             todo.Subject = todoViewModel.Subject;
             todo.Details = todoViewModel.Details;
             todo.NextReminder = todoViewModel.NextReminder;
             todo.Finished = todoViewModel.Finished;
-           }
+        }
     }
 }

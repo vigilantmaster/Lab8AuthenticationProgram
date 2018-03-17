@@ -1,13 +1,11 @@
-﻿using System.Data.Entity;
-using System.Reflection;
+﻿using System.Reflection;
 using System.Web.Mvc;
 using Lab8AuthenticationProgram.Data;
+using Lab8AuthenticationProgram.Repositories;
+using Lab8AuthenticationProgram.Services;
 using SimpleInjector;
 using SimpleInjector.Integration.Web;
 using SimpleInjector.Integration.Web.Mvc;
-
-using Lab8AuthenticationProgram.Repositories;
-using Lab8AuthenticationProgram.Services;
 
 namespace Lab8AuthenticationProgram
 {

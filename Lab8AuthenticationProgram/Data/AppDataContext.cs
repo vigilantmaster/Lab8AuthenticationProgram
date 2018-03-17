@@ -7,16 +7,16 @@ namespace Lab8AuthenticationProgram.Data
     {
         public AppDataContext()
         {
-            this.Configuration.LazyLoadingEnabled = false;
+            Configuration.LazyLoadingEnabled = false;
         }
+
+        //public virtual DbSet<User> Users { get; set; }
+        public virtual DbSet<Todo> UserTodo { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             Database.SetInitializer(new AppDbInitializer());
         }
-
-        //public virtual DbSet<User> Users { get; set; }
-        public virtual DbSet<Todo> UserTodo { get; set; }
 
         public class AppDbInitializer : DropCreateDatabaseIfModelChanges<AppDataContext>
         {

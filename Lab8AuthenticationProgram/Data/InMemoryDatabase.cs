@@ -7,7 +7,7 @@ namespace Lab8AuthenticationProgram.Data
     {
         //public static List<User> Users = new List<User>();
         public static List<Todo> UserTodos = new List<Todo>();
-        public static int id = 0;
+        public static int id;
 
         public static int NextId()
         {
